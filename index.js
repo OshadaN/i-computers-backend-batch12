@@ -3,9 +3,13 @@ import mongoose from 'mongoose'
 import userRouter from './routes/userRouter.js';
 import authenticateUser from './middlewares/authenticate.js';
 import productRouter from './routes/productRouter.js';
+import dotenv from 'dotenv';
+dotenv.config();
+
+const mongoUri = process.env.MONGO_URI;
 
 
-const mongoUri = "mongodb+srv://admin:1234@cluster0.qk6aya7.mongodb.net/?appName=Cluster0"
+
 
 mongoose.connect(mongoUri).then(
     ()=> {
